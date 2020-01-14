@@ -4,6 +4,10 @@
 	برنامه نویس: امید میلانی فرد
 	تاریخ ایجاد: 93-3-5
 */
+/*
+ تاریخ ویرایش :25/10/98
+برنامه نویس :کورش احمدزاده عطایی
+ */
 include("header.inc.php");
 include("../sharedClasses/SharedClass.class.php");
 include("classes/ResearchProjectRefrences.class.php");
@@ -40,7 +44,7 @@ if(isset($_REQUEST["Save"]))
 	{
 		if ($_FILES['Item_FileContent']['error'] != 0)
 		{
-			echo ' خطا در ارسال فایل' . $_FILES['Item_FileContent']['error'];
+			echo ERROR_SEND . $_FILES['Item_FileContent']['error'];
 		}
 		else
 		{
@@ -93,7 +97,7 @@ if(isset($_REQUEST["Save"]))
 		echo "<script>window.opener.document.location.reload(); window.close();</script>";
 		die();
 	}	
-	echo SharedClass::CreateMessageBox("اطلاعات ذخیره شد");
+	echo SharedClass::CreateMessageBox(INFO_SAVED);
 }
 $LoadDataJavascriptCode = '';
 $abstract = $BComment = $APA = "";
@@ -138,7 +142,7 @@ else
 ?>
 <br><table width="90%" border="1" cellspacing="0" align="center">
 <tr class="HeaderOfTable">
-<td align="center">ایجاد/ویرایش منبع کار پژوهشی</td>
+<td align="center"><?php echo CREAT_AND_EDIT_RES_RESEARCH ?></td>
 </tr>
 <tr>
 <td>
@@ -151,7 +155,7 @@ if(!isset($_REQUEST["UpdateID"]))
 <? } ?>
 <tr>
 	<td width="1%" nowrap>
- موتور جستجو
+    <?php echo SEARCH_ENG ?>
 	</td>
 	<td nowrap>
 	<select name="Item_SearchEngine" id="Item_SearchEngine" >
@@ -164,7 +168,7 @@ if(!isset($_REQUEST["UpdateID"]))
 </tr>
 <tr>
 	<td width="1%" nowrap>
- کلمات کلیدی جستجو
+    <?php echo TAGS_WORDS ?>
 	</td>
 	<td nowrap>
 	<input dir=ltr type="text" name="Item_SearchKeywords" id="Item_SearchKeywords" maxlength="1000" size="100">
@@ -173,19 +177,19 @@ if(!isset($_REQUEST["UpdateID"]))
 
 <tr>
 	<td width="1%" nowrap>
- زبان
+    <?php echo LANG_N ?>
 	</td>
 	<td nowrap>
 	<select name="Item_language" id="Item_language" >
 		<option value=0>-
-		<option value='EN'>انگلیسی</option>
-		<option value='FA'>فارسی</option>
+		<option value='EN'><?php echo EN_LAN_N ?></option>
+		<option value='FA'><?php echo FA_LAN_N ?></option>
 	</select>
 	</td>
 </tr>
 <tr>
 	<td width="1%" nowrap>
- عنوان
+        <?php echo TITLE_N ?>
 	</td>
 	<td nowrap>
 	<input dir="<? echo $direction ?>" type="text" name="Item_RefrenceTitle" id="Item_RefrenceTitle" maxlength="500" size="100">
@@ -193,7 +197,7 @@ if(!isset($_REQUEST["UpdateID"]))
 </tr>
 <tr>
 	<td width="1%" nowrap>
- نویسندگان
+        <?php echo WRITERS_N ?>
 	</td>
 	<td nowrap>
 	<input dir="<? echo $direction ?>" type="text" name="Item_authors" id="Item_authors" maxlength="500" size="100">
@@ -201,7 +205,7 @@ if(!isset($_REQUEST["UpdateID"]))
 </tr>
 <tr>
 	<td width="1%" nowrap>
-سال
+        <?php echo YEARS_N ?>
 	</td>
 	<td nowrap>
 	<input type="text" name="Item_PublishYear" id="Item_PublishYear" maxlength="4" size="4">
@@ -226,7 +230,7 @@ if(!isset($_REQUEST["UpdateID"]))
 </tr>
 <tr>
 	<td width="1%" nowrap>
- چکیده
+        <?php echo SUM_N ?>
 	</td>
 	<td nowrap>
 	<textarea name="Item_abstract" id="Item_abstract" cols="80" rows="5"><? echo $abstract; ?></textarea>
@@ -234,20 +238,20 @@ if(!isset($_REQUEST["UpdateID"]))
 </tr>
 <tr>
 	<td width="1%" nowrap>
- وضعیت مطالعه
+        <?php echo STATE_OF_STUDY ?>
 	</td>
 	<td nowrap>
 	<select name="Item_ReadType" id="Item_ReadType" >
 		<option value=0>-
-		<option value='YES'>مطالعه شده</option>
-		<option value='NO'>مطالعه نشده</option>
-		<option value='READING'>در حال مطالعه</option>
+		<option value='YES'> <?php echo ALREADY_STUDY ?></option>
+		<option value='NO'> <?php echo ALREADY_NOT_STUDY ?></option>
+		<option value='READING'><?php echo STUDING ?></option>
 	</select>
 	</td>
 </tr>
 <tr>
 	<td width="1%" nowrap>
-اهمیت
+        <?php echo IMPORTNT ?>
 	</td>
 	<td nowrap>
 	<input type="text" name="Item_priprity" id="Item_priprity" maxlength="2" size="2" value="1">
@@ -256,7 +260,7 @@ if(!isset($_REQUEST["UpdateID"]))
 
 <tr>
 	<td width="1%" nowrap>
- دسته
+        <?php echo CAT_N ?>
 	</td>
 	<td nowrap>
 	<select name="Item_RefrenceTypeID" id="Item_RefrenceTypeID">
@@ -275,7 +279,7 @@ if(!isset($_REQUEST["UpdateID"]))
 </tr>
 <tr>
 	<td width="1%" nowrap>
- نظر کلی
+    <?php echo ALL_COM?>
 	</td>
 	<td nowrap>
 	<textarea name="Item_BriefComment" id="Item_BriefComment" cols="80" rows="5"><? echo $BComment; ?></textarea>
@@ -283,7 +287,7 @@ if(!isset($_REQUEST["UpdateID"]))
 </tr>
 <tr>
 	<td width="1%" nowrap>
- فایل
+        <?php echo FILE_N?>
 	</td>
 	<td nowrap>
 	<input type="file" name="Item_FileContent" id="Item_FileContent">
@@ -297,7 +301,7 @@ if(!isset($_REQUEST["UpdateID"]))
 	<td width="1%" colspan=2>
 	<a href='ManageResearchProjectRefrenceComments.php?ResearchProjectRefrenceID=<? echo $_REQUEST["UpdateID"]; ?>'>
 	<b>
- یادداشتها
+        <?php echo NOTES_N?>
 	</b>
 	</td>
 </tr>
@@ -307,8 +311,8 @@ if(!isset($_REQUEST["UpdateID"]))
 </tr>
 <tr class="FooterOfTable">
 <td align="center">
-<input type="button" onclick="javascript: ValidateForm();" value="ذخیره">
- <input type="button" onclick="javascript: window.close();" value="بستن">
+<input type="button" onclick="javascript: ValidateForm();" value="<?php echo SAVE_M?>">
+ <input type="button" onclick="javascript: window.close();" value="<?php echo CLOSE_N ?>">
 </td>
 </tr>
 </table>

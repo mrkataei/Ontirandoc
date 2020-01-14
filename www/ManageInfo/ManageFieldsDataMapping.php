@@ -1,4 +1,11 @@
-<? 
+
+/*
+تاریخ ویرایش :25/10/98
+برنامه نویس :کورش احمدزاده عطایی
+*/
+
+
+<?
 include "header.inc.php";
 include "FormsGeneratorDB.class.php";  
 HTMLBegin();
@@ -60,11 +67,11 @@ while($rec = $res->fetch())
 <table width=100% border=0>
 <tr class=HeaderOfTable>
 	<TD COLSPAN=2 ALIGN=CENTER>
-	انتخاب جدول و فیلد مربوطه برای تعیین جدول معادلسازی مقادیر
+	<?php echo SELECTION_M ?>
 	</TD>
 </tr>
 <tr>
-	<td width=1% nowrap>بانک اطلاعاتی</td>
+	<td width=1% nowrap><?php echo DATABASE ?></td>
 	<td>
 	<?php if(isset($_REQUEST["Save"])) { ?>
 	<input type=hidden name=Save id=Save value=1>
@@ -88,7 +95,7 @@ while($rec = $res->fetch())
 	</td>
 </tr>
 <tr>
-	<td width=1% nowrap>جدول: </td>
+	<td width=1% nowrap><?php echo TABLE_M ?></td>
 	<td>
 		<?php if(isset($_REQUEST["Save"])) { ?>
 		<input type=hidden name=TableName id=TableName value='<?php echo $TableName; ?>'><?php echo $TableName; ?>
@@ -113,7 +120,7 @@ while($rec = $res->fetch())
 	</td>
 </tr>
 <tr>
-	<td width=1% nowrap>فیلد: </td>
+	<td width=1% nowrap><?php echo FIELD_M ?></td>
 	<td>
 		<?php if(isset($_REQUEST["Save"])) { ?>
 		<input type=hidden name=FieldName id=FieldName value='<?php echo $FieldName; ?>'><?php echo $FieldName; ?>
@@ -140,7 +147,7 @@ while($rec = $res->fetch())
 <?php if(!isset($_REQUEST["Save"]) && $TableName!="") { ?>
 <tr>
 	<td colspan=2 align=center>
-	<input type=submit name=Save id=Save value='تعریف جدول معادلسازی'>
+	<input type=submit name=Save id=Save value=<?php echo DEF_TABLE ?> >
 	</td>
 </tr>
 <?php } ?>
@@ -150,7 +157,7 @@ while($rec = $res->fetch())
 	<?php if(!isset($_REQUEST["FromEditTable"])) { ?>
 	<input type=button onclick='javascript: document.location="ManageFieldsDataMapping.php"' value='بازگشت'>
 	<?php } else { ?>
-	<input type=button onclick='javascript: window.close();' value='بستن'>
+	<input type=button onclick='javascript: window.close();' value=<?php echo CLOSE_N?>>
 	<?php } ?>
 	</td>
 </tr>
@@ -173,12 +180,12 @@ while($rec = $res->fetch())
 <table width=95% align=center>
 <tr>
 	<td>
-	مقدار واقعی
+        <?php echo REAL_VAL ?>
 		<input type=text name=ActualValue id=ActualValue size=20>
-	معادل: 
+        <?php echo M_VAL_EQ ?>
 		<input type=text name=ShowValue id=ShowValue size=60>
 
-		<input type=submit value='ذخیره'>
+		<input type=submit value=<?php echo SAVE_M ?>>
 	</td>
 </tr>
 </table>
@@ -194,17 +201,17 @@ while($rec = $res->fetch())
 <input type=hidden name=WizardReportID id=WizardReportID value='<?php echo $_REQUEST["WizardReportID"]; ?>'>
 <table width=95% align=center border=1 cellspacing=0 cellpadding=3>
 	<tr class=HeaderOfTable>
-		<td align=center colspan=3>مقادیر معادلسازی شده برای فیلد مربوطه</td>
+		<td align=center colspan=3><?php echo VAL_FIELD_M ?></td>
 	</tr>
 	<tr bgcolor=#aaaaaa>
 		<td width=1%>&nbsp;</td>
-		<td width=30%>مقدار اصلی</td>
-		<td>مقدار معادل</td>
+		<td width=30%><?php echo REAL_VAL?></td>
+		<td><?php echo M_VAL_EQ?></td>
 	</tr>
 	<?php echo $list; ?>
 	<tr class=FooterOfTable>
 		<td colspan=3 align=center>
-			<input type=submit value='حذف'>
+			<input type=submit value=<?php echo DELETE_M?>>
 		</td>
 	</tr>
 </table>

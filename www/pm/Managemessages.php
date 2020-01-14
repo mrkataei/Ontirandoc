@@ -4,6 +4,10 @@
 	برنامه نویس: امید میلانی فرد
 	تاریخ ایجاد: 94-2-5
 */
+/*
+ تاریخ ویرایش :25/10/98
+برنامه نویس :کورش احمدزاده عطایی
+ */
 include("header.inc.php");
 include("../sharedClasses/SharedClass.class.php");
 include("classes/messages.class.php");
