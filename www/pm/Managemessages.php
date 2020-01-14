@@ -131,19 +131,18 @@ if(isset($_REQUEST["UpdateID"]))
 	</td>
 </tr>
 <tr>
-	<td width="1%" nowrap>
- فایل ضمیمه
+	<td width="1%" nowrap><?php echo AT_FILE?>
 	</td>
 	<td nowrap>
 	<input type="file" name="Item_FileContent" id="Item_FileContent">
 	<? if(isset($_REQUEST["UpdateID"]) && $obj->RelatedFileName!="") { ?>
-	<a href='DownloadFile.php?FileType=messages&RecID=<? echo $_REQUEST["UpdateID"]; ?>'>دریافت فایل [<?php echo $obj->RelatedFileName; ?>]</a>
+	<a href='DownloadFile.php?FileType=messages&RecID=<? echo $_REQUEST["UpdateID"]; ?>'>د<?php echo REC_FILE?>[<?php echo $obj->RelatedFileName; ?>]</a>
 	<? } ?>
 	</td>
 </tr>
 <tr>
 	<td width="1%" nowrap>
- تصویر
+ <?php echo PIC?>
 	</td>
 	<td nowrap>
 	<input type="file" name="Item_ImageFileContent" id="Item_ImageFileContent">
@@ -154,7 +153,7 @@ if(isset($_REQUEST["UpdateID"]))
 </tr>
 <tr>
 	<td width="1%" nowrap>
- زمان شروع نمایش
+        <?php echo START_TIME?>
 	</td>
 	<td nowrap>
 	<input maxlength="2" id="StartDate_DAY"  name="StartDate_DAY" type="text" size="2">/
@@ -164,7 +163,7 @@ if(isset($_REQUEST["UpdateID"]))
 </tr>
 <tr>
 	<td width="1%" nowrap>
- زمان پایان نمایش
+        <?php echo END_TIME?>
 	</td>
 	<td nowrap>
 	<input maxlength="2" id="EndDate_DAY"  name="EndDate_DAY" type="text" size="2">/
@@ -177,8 +176,8 @@ if(isset($_REQUEST["UpdateID"]))
 </tr>
 <tr class="FooterOfTable">
 <td align="center">
-<input type="button" onclick="javascript: ValidateForm();" value="ذخیره">
- <input type="button" onclick="javascript: document.location='Managemessages.php';" value="جدید">
+<input type="button" onclick="javascript: ValidateForm();" value="<?php echo SAVE_M?>">
+ <input type="button" onclick="javascript: document.location='Managemessages.php';" value="<?php echo NEW_M?>">
 </td>
 </tr>
 </table>
@@ -252,7 +251,7 @@ if($SomeItemsRemoved)
 <table width="100%" align="center" border="0" cellspacing="0">
 <tr>
 	<td width="1%" nowrap>
- متن پیام
+        <?php echo C_MESSAGE?>
 	</td>
 	<td nowrap>
 	<textarea name="Item_MessageBody" id="Item_MessageBody" cols="80" rows="5"></textarea>
@@ -261,7 +260,7 @@ if($SomeItemsRemoved)
 
 
 <tr class="HeaderOfTable">
-<td colspan="2" align="center"><input type="submit" value="جستجو"></td>
+<td colspan="2" align="center"><input type="submit" value="<?php echo SEARCH_M?>"></td>
 </tr>
 </table>
 </td>
@@ -285,20 +284,20 @@ if(isset($_REQUEST["SearchAction"]))
 <br><table width="90%" align="center" border="1" cellspacing="0">
 <tr bgcolor="#cccccc">
 	<td colspan="10">
-	پیامها
+        <?php echo MESSAGES_M?>
 	</td>
 </tr>
 <tr class="HeaderOfTable">
 	<td width="1%"> </td>
-	<td width="1%">ردیف</td>
-	<td width="2%">ویرایش</td>
-	<td><a href="javascript: Sort('MessageBody', 'ASC');">متن پیام</a></td>
-	<td>فایل ضمیمه</td>
-	<td>تصویر</td>
-	<td><a href="javascript: Sort('CreatorID', 'ASC');">ایجاد کننده</a></td>
-	<td><a href="javascript: Sort('CreateDate', 'ASC');">زمان ایجاد</a></td>
-	<td><a href="javascript: Sort('StartDate', 'ASC');">شروع نمایش</a></td>
-	<td><a href="javascript: Sort('EndDate', 'ASC');">پایان نمایش</a></td>
+	<td width="1%"><?php echo ROW_M?></td>
+	<td width="2%"><?php echo EDIT_M?></td>
+	<td><a href="javascript: Sort('MessageBody', 'ASC');"><?php echo C_MESSAGE?></a></td>
+	<td><?php echo AT_FILE?></td>
+	<td><?php echo PIC?></td>
+	<td><a href="javascript: Sort('CreatorID', 'ASC');"><?php echo CREATOR_M?></a></td>
+	<td><a href="javascript: Sort('CreateDate', 'ASC');"><?php echo CREATE_TIM_M?></a></td>
+	<td><a href="javascript: Sort('StartDate', 'ASC');"><?php echo START_TIME?></a></td>
+	<td><a href="javascript: Sort('EndDate', 'ASC');"><?php echo END_TIME?></a></td>
 </tr>
 <?
 for($k=0; $k<count($res); $k++)
@@ -324,7 +323,7 @@ for($k=0; $k<count($res); $k++)
 ?>
 <tr class="FooterOfTable">
 <td colspan="10" align="center">
-	<input type="button" onclick="javascript: ConfirmDelete();" value="حذف">
+	<input type="button" onclick="javascript: ConfirmDelete();" value="<?php echo DELETE_M?>">
 </td>
 </tr>
 <tr bgcolor="#cccccc"><td colspan="10" align="right">

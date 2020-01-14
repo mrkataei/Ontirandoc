@@ -393,7 +393,7 @@ else
     //Managemessages.php By kouroshAtaei
 
     define("CREATE_EDIT","ایجاد/ویرایش پیامه");
-    define("C_MESSAGE" , "پیاک");
+    define("C_MESSAGE" , "متن پیام");
     define("AT_FILE" ,"فایل پیوست");
     define("REC_FILE" , "دریاف فایل");
     define("PIC" ,"تصویر");
