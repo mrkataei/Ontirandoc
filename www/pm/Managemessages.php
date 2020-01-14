@@ -20,7 +20,7 @@ if(isset($_REQUEST["Save"]))
 	{
 		if ($_FILES['Item_FileContent']['error'] != 0)
 		{
-			echo ' خطا در ارسال فایل' . $_FILES['Item_FileContent']['error'];
+			echo ERROR_SEND . $_FILES['Item_FileContent']['error'];
 		}
 		else
 		{
@@ -38,7 +38,7 @@ if(isset($_REQUEST["Save"]))
 	{
 		if ($_FILES['Item_ImageFileContent']['error'] != 0)
 		{
-			echo ' خطا در ارسال فایل' . $_FILES['Item_ImageFileContent']['error'];
+			echo ERROR_SEND . $_FILES['Item_ImageFileContent']['error'];
 		}
 		else
 		{
@@ -83,7 +83,7 @@ if(isset($_REQUEST["Save"]))
 				, $Item_EndDate
 				);
 	}	
-	echo SharedClass::CreateMessageBox("اطلاعات ذخیره شد");
+	echo SharedClass::CreateMessageBox(INFO_SAVED);
 }
 $LoadDataJavascriptCode = '';
 $TMessageBody = "";
@@ -117,26 +117,27 @@ if(isset($_REQUEST["UpdateID"]))
 
 <br><table width="90%" border="1" cellspacing="0" align="center">
 <tr class="HeaderOfTable">
-<td align="center"><?php echo $TMessageBody ?></td>
+<td align="center"><?php echo CREATE_EDIT ?></td>
 </tr>
 <tr>
 <td>
 <table width="100%" border="0">
 <tr>
 	<td width="1%" nowrap>
- متن پیام
+    <?php echo C_MESSAGE?>
 	</td>
 	<td nowrap>
 	<textarea name="Item_MessageBody" id="Item_MessageBody" cols="80" rows="5"><? echo $TMessageBody ?></textarea>
 	</td>
 </tr>
 <tr>
-	<td width="1%" nowrap><?php echo AT_FILE?>
+	<td width="1%" nowrap>
+        <?php echo AT_FILE?>
 	</td>
 	<td nowrap>
 	<input type="file" name="Item_FileContent" id="Item_FileContent">
 	<? if(isset($_REQUEST["UpdateID"]) && $obj->RelatedFileName!="") { ?>
-	<a href='DownloadFile.php?FileType=messages&RecID=<? echo $_REQUEST["UpdateID"]; ?>'>د<?php echo REC_FILE?>[<?php echo $obj->RelatedFileName; ?>]</a>
+	<a href='DownloadFile.php?FileType=messages&RecID=<? echo $_REQUEST["UpdateID"]; ?>'><?php echo REC_FILE?>[<?php echo $obj->RelatedFileName; ?>]</a>
 	<? } ?>
 	</td>
 </tr>
@@ -244,7 +245,9 @@ if($SomeItemsRemoved)
 <input type="hidden" name="SearchAction" id="SearchAction" value="1"> 
 <br><table width="90%" align="center" border="1" cellspacing="0">
 <tr class="HeaderOfTable">
-<td><img src='images/search.gif'><b><a href="#" onclick='javascript: if(document.getElementById("SearchTr").style.display=="none") document.getElementById("SearchTr").style.display=""; else document.getElementById("SearchTr").style.display="none";'>جستجو</a></td>
+<td><img src='images/search.gif'><b><a href="#"  onclick='javascript: if(document.getElementById("SearchTr").style.display=="none") document.getElementById("SearchTr").style.display=""; else document.getElementById("SearchTr").style.display="none";'>
+
+       جستجو </a></td>
 </tr>
 <tr id='SearchTr' style='display: none'>
 <td>
@@ -347,7 +350,7 @@ for($k=0; $k<$TotalCount/$NumberOfRec; $k++)
 <script>
 function ConfirmDelete()
 {
-	if(confirm('آیا مطمین هستید؟')) document.ListForm.submit();
+	if(confirm(<?php echo ARE_YOU_SURE?>)) document.ListForm.submit();
 }
 function ShowPage(PageNumber)
 {

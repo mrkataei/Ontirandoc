@@ -189,8 +189,8 @@ if(UI_LANGUAGE=="EN") {
 
     define("CREATE_EDIT","create / edit ");
     define("C_MESSAGE" , "Message");
-    define("AT_FILE" ,"attachment file");
-    define("REC_FILE" , "recive file");
+    define("AT_FILE" ,"attached file");
+    define("REC_FILE" , "receive file");
     define("PIC" ,"picture");
     define("START_TIME" ,"begin");
     define("END_TIME", "end" );
@@ -392,7 +392,7 @@ else
 
     //Managemessages.php By kouroshAtaei
 
-    define("CREATE_EDIT","ایجاد/ویرایش پیامه");
+    define("CREATE_EDIT","ایجاد/ویرایش پیام");
     define("C_MESSAGE" , "متن پیام");
     define("AT_FILE" ,"فایل پیوست");
     define("REC_FILE" , "دریاف فایل");
@@ -409,7 +409,8 @@ else
     define("EDIT_M" , "ویرایش");
     define("DELETE_M" ,"حذف");
     define("ARE_YOU_SURE" , "آیا مطمئن هستید ؟");
-
+    define("ERROR_SEND" ,"خطا در ارسال فایل");
+    define("INFO_SAVED" , "اطلاعات ذخیره شد");
 
 }
 
