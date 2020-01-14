@@ -183,7 +183,28 @@ if(UI_LANGUAGE=="EN") {
     define("C_LAST_NAME_AND_FIRST_NAME", "Last Name and First Name");
     define("C_THIS_LIST_SHOWS_MEMBERS_OF_THE_PROJECTS_THAT_YOU_ARE_MANAGING_OR_SUBORDINATE_TO_THE_ORGANIZATIONAL_UNIT_UNDER_YOUR_MANAGEMENT", "This list shows members of the projects that you are managing or subordinate to the organizational unit under your management");
     define("C_FOR_ADJUSTING_PERCENTAGES_YOU_CAN_CLICK_ON_PERCENTAGE_NUMBER_IN_EACH_ROW","For adjusting percentages you can click on percentage number in each row");
-    
+
+
+    //Managemessages.php By kouroshAtaei
+
+    define("CREATE_EDIT","create / edit ");
+    define("C_MESSAGE" , "Message");
+    define("AT_FILE" ,"attachment file");
+    define("REC_FILE" , "recive file");
+    define("PIC" ,"picture");
+    define("START_TIME" ,"begin");
+    define("END_TIME", "end" );
+    define("SAVE_M" , "save");
+    define("NEW_M" ,"new");
+    define("SEARCH_M" ,"search");
+    define("MESSAGES_M" , "messages");
+    define("CREATOR_M" , "creator");
+    define("CREATE_TIM_M" , "creat time");
+    define("ROW_M" , "row");
+    define("EDIT_M" , "edit");
+    define("DELETE_M" ,"delete");
+    define("ARE_YOU_SURE" , "Are you sure ?");
+
 }
 else
 {
@@ -305,7 +326,7 @@ else
     define("C_USAGE_TIME_REPORT","گزارش زمان مصرفی");
     define("C_DATE","تاریخ");
     define("C_ACTIVITY","فعالیت");
-    define("C_TIME","زمان");
+  //  define("C_TIME","زمان");
     define("C_TOTAL","مجموع");
     define("C_RIAL","ریال");
     //-------------------------
@@ -368,6 +389,28 @@ else
     define("C_LAST_NAME_AND_FIRST_NAME", "نام خانوادگی و نام");
     define("C_THIS_LIST_SHOWS_MEMBERS_OF_THE_PROJECTS_THAT_YOU_ARE_MANAGING_OR_SUBORDINATE_TO_THE_ORGANIZATIONAL_UNIT_UNDER_YOUR_MANAGEMENT", "در این لیست اعضای پروژه هایی که شما مدیر آنها هستید و یا در زیرمجموعه واحد سازمانی تحت مدیریت شماست نمایش داده میشوند");
     define("C_FOR_ADJUSTING_PERCENTAGES_YOU_CAN_CLICK_ON_PERCENTAGE_NUMBER_IN_EACH_ROW","برای تنظیم درصدها میتوانید روی عدددرصد در هر ردیف کلیک نمایید");
+
+    //Managemessages.php By kouroshAtaei
+
+    define("CREATE_EDIT","ایجاد/ویرایش پیامه");
+    define("C_MESSAGE" , "پیاک");
+    define("AT_FILE" ,"فایل پیوست");
+    define("REC_FILE" , "دریاف فایل");
+    define("PIC" ,"تصویر");
+    define("START_TIME" ,"زمان شروع");
+    define("END_TIME", "زمان پایان" );
+    define("SAVE_M" , "ذخیره");
+    define("NEW_M" ,"جدید");
+    define("SEARCH_M" ,"جستجو");
+    define("MESSAGES_M" , "پیام ها");
+    define("CREATOR_M" , "ایجاد کننده ");
+    define("CREATE_TIM_M" , "زمان ایجاد");
+    define("ROW_M" , "ردیف");
+    define("EDIT_M" , "ویرایش");
+    define("DELETE_M" ,"حذف");
+    define("ARE_YOU_SURE" , "آیا مطمئن هستید ؟");
+
+
 }
 
 ?>

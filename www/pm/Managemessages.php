@@ -113,9 +113,11 @@ if(isset($_REQUEST["UpdateID"]))
 		echo "<input type=\"hidden\" name=\"UpdateID\" id=\"UpdateID\" value='".$_REQUEST["UpdateID"]."'>";
 	}
 ?>
+
+
 <br><table width="90%" border="1" cellspacing="0" align="center">
 <tr class="HeaderOfTable">
-<td align="center">ایجاد/ویرایش پیامها</td>
+<td align="center"><?php echo $TMessageBody ?></td>
 </tr>
 <tr>
 <td>
